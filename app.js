@@ -1,11 +1,11 @@
 /*	Method #1 */
 
 function onScanSuccess(decodedText, decodedResult) {
-	qrScanner.stop();
-	console.log(`Code matched = ${decodedText}`, decodedResult);
+	console.log(decodedResult);
 	let p = document.createElement('p');
-	p.textContent = `Code matched = ${decodedText}`, decodedResult;
+	p.textContent = 'Code matched = ' + decodedText;
 	qrReaderResults.append(p);
+	qrScanner.clear();
 }
 
 function onScanFailure(error) {
