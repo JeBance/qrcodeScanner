@@ -1,11 +1,15 @@
-/*	Method #1 */
+/* Method #1 */
 
 function onScanSuccess(decodedText, decodedResult) {
-	console.log(decodedResult);
-	let p = document.createElement('p');
-	p.textContent = 'Code matched = ' + decodedText;
-	qrReaderResults.append(p);
-	qrScanner.clear();
+	try {
+		console.log(decodedResult);
+		let p = document.createElement('p');
+		p.textContent = 'Code matched = ' + decodedText;
+		qrReaderResult.append(p);
+		qrScanner.clear();
+	} catch(e) {
+		console.log(e);
+	}
 }
 
 function onScanFailure(error) {
@@ -13,5 +17,5 @@ function onScanFailure(error) {
 	// console.log(`Code scan error = ${error}`);
 }
 
-let qrScanner = new Html5QrcodeScanner("qrReader",	{ fps: 24, qrbox: {width: 350, height: 350} }, false);
+let qrScanner = new Html5QrcodeScanner("qrReader", { fps: 24, qrbox: {width: 350, height: 350} }, false);
 qrScanner.render(onScanSuccess, onScanFailure);
