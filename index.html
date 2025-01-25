@@ -1,15 +1,27 @@
 <html>
 
 	<head>
+		<meta charset="utf-8">
 		<title>qrcodeScanner Demo</title>
+		<meta name="description" content="QR code scanner">
+		<meta name="author" content="Oleg Prudkov">
+		<meta name="theme-color" content="#111111">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+		<link rel="manifest" href="qrcodeScanner.webmanifest">
+		<link rel="stylesheet" href="style.css">
+		<link rel="shortcut icon" href="favicon.ico">
+		<link rel="apple-touch-icon" href="img/icon-192.png">
+		<meta property="og:image" content="img/icon-512.png">
+		<script src="pwa.js" defer></script>
 		<script src="html5-qrcode.min.js" defer></script>
 		<script src="app.js" defer></script>
 	</head>
 
 	<body>
-		<div id="qrReader" style="width:500px"></div>
-		<div id="qrReaderResult"></div>
-		<video id="reader" style="width:500px"></video>
+		<div id="wraper">
+			<div id="qrReader"></div>
+			<div id="qrReaderResult"></div>
+		</div>
 	</body>
 
 </html>

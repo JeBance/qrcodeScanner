@@ -48,12 +48,14 @@ const qrCodeSuccessCallback = (decodedText, decodedResult) => {
 	}
 };
 
+qrScanner.start({ facingMode: "environment" }, config.qrScan, qrCodeSuccessCallback);
+/*
 Html5Qrcode.getCameras().then(devices => {
 	try {
-		var cameraId = devices[1].id;
-		qrScanner.start(cameraId, config.qrScan, qrCodeSuccessCallback);
-		//qrScanner.start({ facingMode: "environment" }, config.qrScan, qrCodeSuccessCallback);
+//		var cameraId = devices[1].id;
+//		qrScanner.start(cameraId, config.qrScan, qrCodeSuccessCallback);
 	} catch(e) {
 		console.log(e);
 	}
 });
+*/
