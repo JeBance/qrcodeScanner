@@ -23,6 +23,8 @@ qrScanner.render(onScanSuccess, onScanFailure);
 
 /* Method #2 */
 
+const qrScanner = new Html5Qrcode("reader");
+
 const config = {
 	qrScan: {
 		fps: 10,
@@ -46,5 +48,12 @@ const qrCodeSuccessCallback = (decodedText, decodedResult) => {
 	}
 };
 
-let qrScanner = new Html5Qrcode("reader");
-qrScanner.start({ facingMode: "environment" }, config.qrScan, qrCodeSuccessCallback);
+Html5Qrcode.getCameras().then(devices => {
+	try {
+		var cameraId = devices[1].id;
+		qrScanner.start(cameraId, config.qrScan, qrCodeSuccessCallback);
+		//qrScanner.start({ facingMode: "environment" }, config.qrScan, qrCodeSuccessCallback);
+	} catch(e) {
+		console.log(e);
+	}
+});
