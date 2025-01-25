@@ -23,7 +23,7 @@ qrScanner.render(onScanSuccess, onScanFailure);
 
 /* Method #2 */
 
-const qrScanner = new Html5Qrcode("reader");
+const qrScanner = new Html5Qrcode("qrReader");
 
 const config = {
 	qrScan: {
