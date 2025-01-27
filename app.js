@@ -72,10 +72,17 @@ const printContent = (decodedText, decodedResult) => {
 		resultHeader.append(h);
 
 		let p = document.createElement('p');
-		p.textContent = "Text:\n" + decodedText;
+		p.textContent = decodedText;
 		resultContent.append(p);
 
 		qrReaderResult.animation();
+		
+		if (isURLstring(decodedText)) {
+			browse.href = decodedText;
+			browse.className = '';
+		} else {
+			browse.className = 'hide';
+		}
 	} catch(e) {
 		console.log(e);
 	}
@@ -117,5 +124,15 @@ const actionOnClick = (elem) => {
 
 	} catch(e) {
 		console.log(e);
+	}
+}
+
+const isURLstring = (string) => {
+	try {
+		let url = new URL(string);
+		return true;
+	} catch(e) {
+		console.log(e);
+		return false;
 	}
 }
