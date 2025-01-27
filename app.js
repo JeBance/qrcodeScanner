@@ -67,7 +67,7 @@ const printContent = (decodedText, decodedResult) => {
 		resultHeader.innerHTML = '';
 		resultContent.innerHTML = '';
 
-		let h = document.createElement('h');
+		let h = document.createElement('h1');
 		h.textContent = 'New ' + decodedResult.result.format.formatName + ' detected!';
 		resultHeader.append(h);
 
@@ -86,7 +86,36 @@ const shareContent = () => {
 		navigator.share({
 			title: scanResult.result.format.formatName,
 			text: scanResult.result.text
-		}).then(() => alert('Successful share'))
+		})
+		.then(() => alert('Successful share'))
 		.catch((e) => console.log('Error sharing', e));
+	}
+}
+
+const copyContent = () => {
+	navigator.clipboard.writeText(scanResult.result.text)
+		.then(() => alert('Successful copy'))
+		.catch((e) => console.log('Error copying', e));
+	}
+}
+
+const actionOnClick = (elem) => {
+	try {
+
+		switch(elem.id) {
+			case 'share':
+				shareContent();
+				break;
+
+			case 'copy':
+				copyContent();
+				break;
+
+			default:
+				break;
+		}
+
+	} catch(e) {
+		console.log(e);
 	}
 }
