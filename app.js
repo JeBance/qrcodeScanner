@@ -96,8 +96,8 @@ const copyContent = () => {
 	navigator.clipboard.writeText(scanResult.result.text)
 		.then(() => alert('Successful copy'))
 		.catch((e) => console.log('Error copying', e));
-	}
 }
+
 
 const actionOnClick = (elem) => {
 	try {
