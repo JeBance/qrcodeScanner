@@ -36,9 +36,12 @@ const config = {
 	}
 };
 
+const scanResult = {};
+
 const qrCodeSuccessCallback = (decodedText, decodedResult) => {
 	try {
 		console.log(decodedResult);
+		scanResult = decodedResult.result;
 		printContent(decodedText, decodedResult);
 		qrScanner.pause();
 	} catch(e) {
@@ -71,3 +74,12 @@ const printContent = (decodedText, decodedResult) => {
 	}
 };
 
+const shareContent = () => {
+	if (navigator.share) {
+		navigator.share({
+			title: scanResult.format.formatName,
+			text: scanResult.text
+		}).then(() => alert('Successful share'))
+		.catch((e) => console.log('Error sharing', e));
+	}
+}
