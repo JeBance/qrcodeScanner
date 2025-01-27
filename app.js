@@ -78,7 +78,7 @@ const printContent = (decodedText, decodedResult) => {
 		qrReaderResult.animation();
 		
 		if (isURLstring(decodedText)) {
-			browse.href = decodedText;
+			browse.href = `${decodedText}`;
 			browse.className = '';
 		} else {
 			browse.className = 'hide';
