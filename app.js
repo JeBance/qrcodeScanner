@@ -41,7 +41,7 @@ const scanResult = {};
 const qrCodeSuccessCallback = (decodedText, decodedResult) => {
 	try {
 		console.log(decodedResult);
-		scanResult = decodedResult.result;
+		scanResult.result = decodedResult.result;
 		printContent(decodedText, decodedResult);
 		qrScanner.pause();
 	} catch(e) {
@@ -64,10 +64,17 @@ qrReaderResult.animation = () => {
 
 const printContent = (decodedText, decodedResult) => {
 	try {
-		qrReaderResult.innerHTML = '';
+		resultHeader.innerHTML = '';
+		resultContent.innerHTML = '';
+
+		let h = document.createElement('h');
+		h.textContent = 'New ' + decodedResult.result.format.formatName + ' detected!';
+		resultHeader.append(h);
+
 		let p = document.createElement('p');
-		p.textContent = 'Code matched = ' + decodedText;
-		qrReaderResult.append(p);
+		p.textContent = "Text:\n" + decodedText;
+		resultContent.append(p);
+
 		qrReaderResult.animation();
 	} catch(e) {
 		console.log(e);
@@ -77,8 +84,8 @@ const printContent = (decodedText, decodedResult) => {
 const shareContent = () => {
 	if (navigator.share) {
 		navigator.share({
-			title: scanResult.format.formatName,
-			text: scanResult.text
+			title: scanResult.result.format.formatName,
+			text: scanResult.result.text
 		}).then(() => alert('Successful share'))
 		.catch((e) => console.log('Error sharing', e));
 	}
