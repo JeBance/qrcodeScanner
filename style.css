@@ -91,7 +91,7 @@ html, body {
 	top: 100%;
 	width: 100%;
 	height: 400px;
-	padding: 5px;
+	padding: 20px;
 	font-size: 10px;
 	overflow-y: scroll;
 	display: flex;
@@ -171,3 +171,17 @@ button:active {
 	background: var(--color-grey);
 }
 
+.header {
+	width: 100%;
+	height: 80px;
+}
+
+.content {
+	width: 100%;
+	height: inherit;
+}
+
+.share {
+	width: 100%;
+	height: 80px;
+}
