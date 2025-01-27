@@ -139,7 +139,7 @@ html, body {
 	display: none;
 }
 
-#github {
+.svg {
 	width: 40;
 	height: 40;
 	margin: 20px;
