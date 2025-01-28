@@ -177,6 +177,7 @@ button:active {
 	align-items: flex-start;
 	border-radius: 20px;
 	background: var(--color-black);
+	word-break: break-all;
 }
 
 .footer {

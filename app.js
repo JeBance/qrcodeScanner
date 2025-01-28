@@ -67,7 +67,7 @@ const printContent = (decodedText, decodedResult) => {
 		resultHeader.innerHTML = '';
 		resultContent.innerHTML = '';
 
-		let h = document.createElement('h1');
+		let h = document.createElement('h3');
 		h.textContent = 'New ' + decodedResult.result.format.formatName + ' detected!';
 		resultHeader.append(h);
 
