@@ -8,46 +8,21 @@
 		<meta name="theme-color" content="#111111">
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 		<link rel="manifest" href="qrcodeScanner.webmanifest">
-		<link rel="stylesheet" href="style.css">
-		<link rel="shortcut icon" href="favicon.ico">
-		<link rel="apple-touch-icon" href="img/icon-192.png">
-		<meta property="og:image" content="img/icon-512.png">
-		<script src="pwa.js" defer></script>
-		<script src="html5-qrcode.min.js" defer></script>
-		<script src="app.js" defer></script>
+		<link rel="stylesheet" href="assets/css/style.css">
+		<link rel="shortcut icon" href="assets/img/favicon.ico">
+		<link rel="apple-touch-icon" href="assets/img/icon-192.png">
+		<meta property="og:image" content="assets/img/icon-512.png">
+		<script src="assets/js/pwa.js" defer></script>
+		<script src="assets/js/html5-qrcode.min.js" defer></script>
+		<script src="assets/js/app.js" defer></script>
 	</head>
 
 	<body class="flex center row">
 		<div id="header" class="flex center row">QR code scanner</div>
 		<div id="qrReader" class="flex center row"></div>
 		<div id="qrReaderResult">
-			<div id="resultHeader" class="header flex center row"><h3>New QR_CODE detected!</h3></div>
-			<div id="resultContent" class="content flex center row">
-				lasdcaldskmldavkjnladjkvnakldsjvcnadskljvcnsdkljn<br>
-				lasdcaldskmldavkjnladjkvnakldsjvcnadskljvcnsdkljn<br>
-				lasdcaldskmldavkjnladjkvnakldsjvcnadskljvcnsdkljn<br>
-				lasdcaldskmldavkjnladjkvnakldsjvcnadskljvcnsdkljn<br>
-				lasdcaldskmldavkjnladjkvnakldsjvcnadskljvcnsdkljn<br>
-				lasdcaldskmldavkjnladjkvnakldsjvcnadskljvcnsdkljn<br>
-				lasdcaldskmldavkjnladjkvnakldsjvcnadskljvcnsdkljn<br>
-				lasdcaldskmldavkjnladjkvnakldsjvcnadskljvcnsdkljn<br>
-				lasdcaldskmldavkjnladjkvnakldsjvcnadskljvcnsdkljn<br>
-				lasdcaldskmldavkjnladjkvnakldsjvcnadskljvcnsdkljn<br>
-				lasdcaldskmldavkjnladjkvnakldsjvcnadskljvcnsdkljn<br>
-				lasdcaldskmldavkjnladjkvnakldsjvcnadskljvcnsdkljn<br>
-				lasdcaldskmldavkjnladjkvnakldsjvcnadskljvcnsdkljn<br>
-				lasdcaldskmldavkjnladjkvnakldsjvcnadskljvcnsdkljn<br>
-				lasdcaldskmldavkjnladjkvnakldsjvcnadskljvcnsdkljn<br>
-				lasdcaldskmldavkjnladjkvnakldsjvcnadskljvcnsdkljn<br>
-				lasdcaldskmldavkjnladjkvnakldsjvcnadskljvcnsdkljn<br>
-				lasdcaldskmldavkjnladjkvnakldsjvcnadskljvcnsdkljn<br>
-				lasdcaldskmldavkjnladjkvnakldsjvcnadskljvcnsdkljn<br>
-				lasdcaldskmldavkjnladjkvnakldsjvcnadskljvcnsdkljn<br>
-				lasdcaldskmldavkjnladjkvnakldsjvcnadskljvcnsdkljn<br>
-				lasdcaldskmldavkjnladjkvnakldsjvcnadskljvcnsdkljn<br>
-				lasdcaldskmldavkjnladjkvnakldsjvcnadskljvcnsdkljn<br>
-				lasdcaldskmldavkjnladjkvnakldsjvcnadskljvcnsdkljn<br>
-			</div>
+			<div id="resultHeader" class="header flex center row"></div>
+			<div id="resultContent" class="content flex center row"></div>
 			<div id="resultShare" class="footer flex center row">
 				<svg id="share" class="svg" onclick="actionOnClick(this)" aria-hidden="true" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <title>share-nodes</title> <path d="M26 20.75c-1.594 0.006-3.019 0.726-3.972 1.856l-0.006 0.008-10.91-5.455c0.088-0.348 0.139-0.747 0.139-1.159s-0.050-0.811-0.146-1.193l0.007 0.034 10.911-5.455c0.963 1.109 2.374 1.806 3.949 1.806 2.883 0 5.221-2.338 5.221-5.221s-2.337-5.221-5.221-5.221c-2.883 0-5.221 2.337-5.221 5.221 0 0.010 0 0.020 0 0.031v-0.002c0.003 0.412 0.053 0.811 0.146 1.194l-0.007-0.036-10.911 5.455c-0.969-1.143-2.406-1.864-4.012-1.864-2.9 0-5.25 2.351-5.25 5.25s2.351 5.25 5.25 5.25c1.606 0 3.043-0.721 4.006-1.857l0.006-0.008 10.911 5.455c-0.082 0.347-0.129 0.745-0.129 1.154 0 2.897 2.348 5.245 5.245 5.245s5.245-2.348 5.245-5.245c0-2.897-2.348-5.245-5.245-5.245-0.002 0-0.004 0-0.005 0h0zM26 3.25c1.519 0 2.75 1.231 2.75 2.75s-1.231 2.75-2.75 2.75c-1.519 0-2.75-1.231-2.75-2.75v0c0.002-1.518 1.232-2.748 2.75-2.75h0zM6 18.75c-1.519 0-2.75-1.231-2.75-2.75s1.231-2.75 2.75-2.75c1.519 0 2.75 1.231 2.75 2.75v0c-0.002 1.518-1.232 2.748-2.75 2.75h-0zM26 28.75c-1.519 0-2.75-1.231-2.75-2.75s1.231-2.75 2.75-2.75c1.519 0 2.75 1.231 2.75 2.75v0c-0.002 1.518-1.232 2.748-2.75 2.75h-0z"></path> </g></svg>
 				<svg id="copy" class="svg" onclick="actionOnClick(this)" aria-hidden="true" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <title>copy</title> <path d="M31.218 8.096c-0.008-0.059-0.018-0.112-0.033-0.163l0.002 0.008c-0.052-0.222-0.158-0.414-0.303-0.568l0.001 0.001-6.297-6.296c-0.155-0.146-0.349-0.252-0.564-0.302l-0.008-0.002c-0.042-0.012-0.094-0.023-0.147-0.030l-0.006-0.001c-0.044-0.013-0.098-0.024-0.154-0.031l-0.006-0.001h-9.445c-0.69 0-1.25 0.56-1.25 1.25v0 22.038c0 0.69 0.56 1.25 1.25 1.25h15.742c0.69-0.001 1.249-0.56 1.25-1.25v-15.742c-0.008-0.062-0.019-0.117-0.034-0.171l0.002 0.009zM24.953 4.979l2.029 2.028h-2.029zM15.508 22.75v-19.538h6.945v5.046c0 0.69 0.56 1.25 1.25 1.25h5.047v13.242zM17.742 26.75c-0.69 0-1.25 0.56-1.25 1.25v0.77h-13.242v-19.539h6.75c0.69 0 1.25-0.56 1.25-1.25s-0.56-1.25-1.25-1.25v0h-8c-0.69 0-1.25 0.56-1.25 1.25v0 22.039c0 0.69 0.56 1.25 1.25 1.25h15.742c0.69-0.001 1.249-0.56 1.25-1.25v-2.020c-0.001-0.69-0.56-1.249-1.25-1.25h-0z"></path> </g></svg>

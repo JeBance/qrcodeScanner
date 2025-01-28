@@ -10,19 +10,19 @@ self.addEventListener("install", (event) => {
     addResourcesToCache([
       "/qrcodeScanner/",
       "/qrcodeScanner/index.html",
-      "/qrcodeScanner/favicon.ico",
-      "/qrcodeScanner/style.css",
-      "/qrcodeScanner/img/icon-32.png",
-      "/qrcodeScanner/img/icon-64.png",
-      "/qrcodeScanner/img/icon-128.png",
-      "/qrcodeScanner/img/icon-180.png",
-      "/qrcodeScanner/img/icon-192.png",
-      "/qrcodeScanner/img/icon-196.png",
-      "/qrcodeScanner/img/icon-256.png",
-      "/qrcodeScanner/img/icon-512.png",
-      "/qrcodeScanner/app.js",
-      "/qrcodeScanner/pwa.js",
-      "/qrcodeScanner/html5-qrcode.min.js"
+      "/qrcodeScanner/assets/css/style.css",
+      "/qrcodeScanner/assets/img/favicon.ico",
+      "/qrcodeScanner/assets/img/icon-32.png",
+      "/qrcodeScanner/assets/img/icon-64.png",
+      "/qrcodeScanner/assets/img/icon-128.png",
+      "/qrcodeScanner/assets/img/icon-180.png",
+      "/qrcodeScanner/assets/img/icon-192.png",
+      "/qrcodeScanner/assets/img/icon-196.png",
+      "/qrcodeScanner/assets/img/icon-256.png",
+      "/qrcodeScanner/assets/img/icon-512.png",
+      "/qrcodeScanner/assets/js/app.js",
+      "/qrcodeScanner/assets/js/pwa.js",
+      "/qrcodeScanner/assets/js/html5-qrcode.min.js"
     ])
   );
 });
